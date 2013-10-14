@@ -7,9 +7,6 @@
   "contributors": [
     "Chad Macey <chad_macey@hotmail.com>"
   ],
-  "devDependencies": {
-	"nodeunit": "latest"
-  },
   "dependencies": {
     "request": "latest",
     "express": "2.x"
