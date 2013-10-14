@@ -5,7 +5,7 @@ var express = require('express');
 import url = module('url');
 
 import expressD = module("express");
-var app: expressD.ExpressServer = express();
+var app: expressD.ExpressServer = express.createServer();
 
 app.use(express.bodyParser());
 
