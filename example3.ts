@@ -1,11 +1,32 @@
 ///<reference path=".\typed\node.d.ts"/>
 
-import http = module('http');
+module fixed {
 
-http.createServer(function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    console.log('request received');
-    res.end('Hello World\n');
-}).listen(8090, "127.0.0.1");
+    function IsGreaterThanZero(value, callback) {
 
-console.log('Server running at http://127.0.0.1:8090/');
+        setTimeout(function () {
+
+            console.log("do some work");
+
+            if (value > 0)
+                callback(true);
+            else
+                callback(false);
+
+        }, 1000);
+
+    }
+
+    IsGreaterThanZero(0, function (value) {
+        console.log("0:", value);
+
+        IsGreaterThanZero(-1, function (value) {
+            console.log("-1:", value);
+
+            IsGreaterThanZero(1, function (value) {
+                console.log("1:", value);
+            });
+        });
+    });
+    
+}
